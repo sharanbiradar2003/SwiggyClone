@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order History | Swiggy Clone</title>
+
+<style>
+  body {
+    font-family: Poppins, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+  }
+
+  .history-container {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fc8019;
+    font-size: 26px;
+  }
+
+  .order-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    border-left: 5px solid #fc8019;
+  }
+
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .order-header div {
+    font-size: 15px;
+    color: #444;
+  }
+
+  .order-status {
+    font-weight: 600;
+    color: #1b9b35;
+  }
+
+  .item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .item-name {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .restaurant {
+    font-size: 12px;
+    color: #777;
+  }
+
+  .price-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+
+  .summary-box {
+    background: #fff7f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    font-size: 15px;
+  }
+
+  .summary-row.total {
+    font-weight: 700;
+    font-size: 17px;
+  }
+</style>
+</head>
+<body>
+
+<div class="history-container">
+  <h2>Your Order History</h2>
+
+  <div id="orderHistoryList"></div>
+</div>
+
+<script>
+const orderHistory = JSON.parse(localStorage.getItem("swiggyOrderHistory")) || [];
+const container = document.getElementById("orderHistoryList");
+
+if (orderHistory.length === 0) {
+  container.innerHTML =
+    "<p style='text-align:center;color:#777;'>No past orders found.</p>";
+} else {
+  orderHistory.reverse().forEach(order => {
+    const card = document.createElement("div");
+    card.className = "order-card";
+
+    let itemsHTML = "";
+    order.items.forEach(item => {
+      itemsHTML += `
+        <div class="item">
+          <img src="${item.img}" />
+          <div>
+            <div class="item-name">${item.name}</div>
+            <div class="restaurant">${item.restaurantName || ""}</div>
+            <div>Qty: ${item.qty} × ₹${item.price}</div>
+            <div class="price-line">
+              <span></span>
+              <span><b>₹${item.qty * item.price}</b></span>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    card.innerHTML = `
+      <div class="order-header">
+        <div>Order Id #${order.id}</div>
+        <div class="order-status">${order.status}</div>
+      </div>
+
+      <div class="order-header">
+        <div>Date:</div>
+        <div>${order.date}</div>
+      </div>
+
+      ${itemsHTML}
+
+      <div class="summary-box">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>₹${order.subtotal}</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery Fee</span>
+          <span>₹${order.deliveryFee}</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (8%)</span>
+          <span>₹${order.tax}</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span>₹${order.total}</span>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+</script>
+
+</body>
+</html>

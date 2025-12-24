@@ -1,0 +1,621 @@
+/* ===============================
+   RESET & BASE STYLES
+=============================== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 32px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+.logo-image {
+  width: 50px;  /* Adjust logo size */
+  height: 50px;
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/050/816/833/small_2x/swiggy-transparent-icon-free-png.png'); /* Replace with your logo URL */
+  background-size: cover;
+  background-position: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff5722; /* Swiggy-like orange */
+}
+
+
+/* Navigation */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+header nav a:hover {
+  color: #fc8019;
+}
+
+/* Cart Icon + Count */
+header nav i {
+  margin-left: 6px;
+  font-size: 1rem;
+}
+
+#cartCount {
+  background-color: #fc8019;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 0.8rem;
+  margin-left: 4px;
+  position: absolute;
+  top:7px;
+  right:150px;
+}
+
+/* ===============================
+   HERO SECTION
+=============================== */
+.hero {
+  height: 52vh;
+  background: url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+}
+.hero * { position: relative; z-index: 1; }
+.hero h1 { font-size: 2rem; margin: 0 0 12px; }
+.hero .search { display: flex; gap: 8px; }
+.hero input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  width: 320px;
+  max-width: 70vw;
+}
+.hero button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #fc8019;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ===============================
+   CATEGORIES
+=============================== */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 18px 12px;
+}
+.categories button {
+  border: none;
+  background: #f0f0f0;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.categories button.active {
+  background: #fc8019;
+  color: #fff;
+}
+
+/* ===============================
+   RESTAURANT CARDS
+=============================== */
+.restaurant-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  padding: 18px 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.restaurant-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.restaurant-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.restaurant-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.restaurant-info h3 { margin: 0; font-size: 1.05rem; }
+.restaurant-info p { margin: 0; color: #666; font-size: 0.9rem; }
+.restaurant-info .btns {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.add { background: #fc8019; color: #fff; }
+.view { background: #efefef; }
+
+/* ===============================
+   FOOTER
+=============================== */
+footer {
+  text-align: center;
+  padding: 20px 12px;
+  background: #fafafa;
+  color: #555;
+  margin-top: 18px;
+}
+
+/* ===============================
+   TOAST
+=============================== */
+#toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 28px;
+  background: #fc8019;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: none;
+  z-index: 2000;
+}
+
+/* ===============================
+   MODAL
+=============================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  animation: pop 0.3s ease;
+}
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+  header .logo-image {
+    width: 100px;
+    height: 50px;
+  }
+  .hero h1 { font-size: 1.4rem; }
+  .hero input { width: 180px; }
+}
+/* ...existing code... */
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  header nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .restaurant-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .logo-container {
+    margin-bottom: 10px;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .hero {
+    padding: 30px 10px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+  .search {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .categories {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .restaurant-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 10px;
+  }
+  footer {
+    font-size: 0.9rem;
+    padding: 12px 5px;
+  }
+}
+
+/* Ensure images and cards are responsive */
+.restaurant-card img,
+.menu-item img {
+  width: 100%;
+  height: 160px;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.restaurant-card,
+.menu-item {
+  min-width: 0;
+  box-sizing: border-box;
+}
+.footer {
+  background-color: #f8f8f8;
+  color: #333;
+  font-family: "Inter", sans-serif;
+  padding: 40px 80px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.footer-top p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-top strong {
+  color: #333;
+}
+
+.app-links img {
+  height: 50px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-logo {
+  flex: 1 1 220px;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.footer-logo h2 {
+  color: #fc8019;
+  font-weight: 700;
+  font-size: 24px;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px 50px;
+  flex: 3;
+}
+
+.footer-links h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  font-size: 14px;
+  color: #555;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  color: #000;
+}
+
+.city-btn {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+}
+
+.city-btn:hover {
+  border-color: #000;
+}
+
+.social-icons i {
+  font-size: 18px;
+  margin-right: 12px;
+  color: #555;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-top p {
+    margin-bottom: 20px;
+  }
+
+  .app-links img {
+    height: 45px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Add spacing between sentences (footer links, paragraphs, etc.) */
+
+.footer-links li {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;              /* adds vertical gap between list items */
+  line-height: 1.7;           /* increases space between lines */
+  letter-spacing: 0.3px;      /* slightly widens text spacing */
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  color: #000;
+}
+
+/* For better spacing between headings and lists */
+.footer-links h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;        /* more space below heading */
+  color: #000;
+}
+
+/* For paragraph text under logo */
+.footer-logo p {
+  font-size: 14px;
+  margin-top: 12px;
+  line-height: 1.6;           /* sentence spacing */
+  color: #555;
+}
+
+/* Optional: Add extra breathing space between sections */
+.footer-links div {
+  margin-bottom: 10px;
+}
+
+/* Add to your style.css */
+body.dark-mode {
+  background: #181818;
+  color: #eee;
+}
+body.dark-mode header,
+body.dark-mode .restaurant-card,
+body.dark-mode .footer,
+body.dark-mode .btn-view{
+  background: #222 !important;
+  color: #eee !important;
+}
+body.dark-mode nav a,
+body.dark-mode .footer-links li,
+body.dark-mode .footer-logo h2 {
+  color: #eee !important;
+}
+body.dark-mode .categories button {
+  background: #333 !important;
+  color: #eee !important;
+}
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+body.dark-mode header nav {
+  background-color: #000;
+  color: white;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    width: 220px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  header nav a,
+  header nav button {
+    margin: 8px 0;
+  }
+
+  /* When Active */
+  #navMenu.active {
+    display: flex;
+  }
+  #cartCount {
+  background-color: #fc8019;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 0.8rem;
+  margin-left: 4px;
+  position: absolute;
+  top:178px;
+  right:155px;
+}
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- NAVBAR.HTML (FULLY WORKING) -->
+<body>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+a { text-decoration: none; color: #333; }
+a:hover { color: #fc8019; }
+
+/* NAVBAR CONTAINER */
+.navbar-container {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+/* LOGO */
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo img { height: 38px; }
+.nav-logo span { font-size: 1.5rem; font-weight: 700; color: #fc8019; }
+
+/* DESKTOP MENU */
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.05rem;
+}
+
+.nav-item { cursor: pointer; position: relative; }
+
+/* DROPDOWN */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  background: #fff;
+  min-width: 210px;
+  border-radius: 6px;
+  padding: 8px 0;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.08);
+  border: 1px solid #ddd;
+  z-index: 2000;
+}
+.dropdown-menu a { display: block; padding: 10px 14px; }
+.dropdown-menu a:hover { background: #f5f5f5; }
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  width: 28px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 5px;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  width: 100%;
+  background: white;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mobile-dropdown {
+  display: none;
+  padding-left: 12px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media(max-width:900px){
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+</style>
+
+<!-- NAVBAR STRUCTURE -->
+<nav class="navbar-container">
+
+  <div class="nav-logo">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/050/816/833/small_2x/swiggy-transparent-icon-free-png.png">
+    <span>Swiggy</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="aboutSwiggy.html">AboutSwiggy</a></li>
+    <li><a href="ourbusiness.html">Our Businesses</a></li>
+    <li><a href="deliver.html">Delivering For Everyone</a></li>
+    <li><a href="Newsroom.html">Newsroom</a></li>
+
+    <!-- <li class="nav-item dropdown" id="investor-btn">
+      Investor Relations ▾ -->
+      <ul class="dropdown-menu" id="investor-menu">
+        <li><a href="#">Financial Results</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Governance</a></li>
+        <li><a href="#">Coverage</a></li>
+      </ul>
+    </li>
+
+    <!-- <li class="nav-item dropdown" id="sustainabilityBtn">
+      Sustainability ▾ -->
+      <ul class="dropdown-menu" id="dropdownMenu">
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Climate</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contactus.html">Contact Us</a></li>
+  </ul>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="aboutSwiggy.html">About Swiggy</a></li>
+    <li><a href="ourbusiness.html">Our Businesses</a></li>
+    <li><a href="deliver.html">Delivering For Everyone</a></li>
+    <li><a href="Newsroom.html">Newsroom</a></li>
+
+    <li onclick="toggleMobileDropdown('mob-investor')">Investor Relations ▾</li>
+    <div id="mob-investor" class="mobile-dropdown">
+      <a href="#">Financial Results</a>
+      <a href="#">Reports</a>
+      <a href="#">Governance</a>
+    </div>
+
+    <li onclick="toggleMobileDropdown('mob-sustain')">Sustainability ▾</li>
+    <div id="mob-sustain" class="mobile-dropdown">
+      <a href="#">Overview</a>
+      <a href="#">Climate</a>
+      <a href="#">Community</a>
+    </div>
+
+    <li><a href="contactus.html">Contact Us</a></li>
+  </ul>
+</div>
+
+<script>
+/* ---------------- DESKTOP DROPDOWNS ---------------- */
+function closeAllDesktopMenus() {
+  document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+}
+
+document.addEventListener("click", () => closeAllDesktopMenus());
+
+document.getElementById("investor-btn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleDesktopMenu("investor-menu");
+});
+document.getElementById("sustainabilityBtn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleDesktopMenu("dropdownMenu");
+});
+
+function toggleDesktopMenu(id) {
+  const menu = document.getElementById(id);
+  const isOpen = menu.style.display === "block";
+  closeAllDesktopMenus();
+  if (!isOpen) menu.style.display = "block";
+}
+
+/* ---------------- MOBILE HAMBURGER ---------------- */
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.style.display =
+    mobileMenu.style.display === "block" ? "none" : "block";
+});
+
+/* ---------------- MOBILE DROPDOWNS ---------------- */
+function toggleMobileDropdown(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+}
+</script>
+</body>
+</html>

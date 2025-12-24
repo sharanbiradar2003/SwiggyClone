@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Click Menu</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .nav-item {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 20px;
+        color: #fc8019;
+        font-weight: 600;
+        margin: 20px;
+    }
+
+    .arrow {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    /* Dropdown Box */
+    .dropdown-menu {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background: #ffffff;
+        width: 150px;
+        padding: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+        display: none;   /* Hidden by default */
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: #333;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+        background: #f8f8f8;
+        color: #fc8019;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar Item -->
+<div class="nav-item" id="sustainabilityBtn">
+    Sustainability <span class="arrow">▼</span>
+
+    <!-- Dropdown
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Overview</a>
+        <a href="#">Climate</a>
+        <a href="#">Community</a>
+        <a href="#">Conscience</a>
+    </div>
+</div> -->
+
+<script src="Sustainability.js"></script>
+</body>
+</html>

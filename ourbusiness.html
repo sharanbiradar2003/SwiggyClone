@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiggy Corporate Section</title>
+  <link rel="stylesheet" href="ourbusiness.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+  <section class="contact-section">
+    <div class="contact-left">
+      
+
+  <section class="corporate-container">
+    <div class="corporate-card">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/flavour.webp" alt="Food Icon" class="card-img">
+      <h2>Food</h2>
+      <p>
+        On our Food Delivery marketplace, users can conveniently search and discover multiple restaurant listings, browse their menus, place food orders, pay seamlessly, and track order deliveries. These orders are received and prepared by our restaurant partners and delivered to users through the large fleet of delivery partners on our platform.
+      </p>
+      <button>Place your order here</button>
+    </div>
+
+    <div class="corporate-card">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2025/10/instamart-new-logo.png" alt="Instamart Icon" class="card-img">
+      <h2>Instamart</h2>
+      <p>
+        On Instamart, users can access and browse a wide selection of grocery and household items. These orders are received by merchant partners, processed through our dark stores, and delivered to users through delivery partners.
+      </p>
+      <button>Place your order here</button>
+    </div>
+
+    <div class="corporate-card">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/dineout-1.webp" alt="Dineout Icon" class="card-img">
+      <h2>Dineout</h2>
+      <p>
+        Dineout facilitates a user’s eating-out experience, through which users can discover restaurants, access menus and images, make reservations, benefit from attractive promotions, and make digital payments to such restaurants on our platform.
+      </p>
+      <button>Click here to make reservations</button>
+    </div>
+  </section>
+
+</body>
+</html>

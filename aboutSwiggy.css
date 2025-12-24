@@ -1,0 +1,391 @@
+/* ===========================
+    ABOUT US SECTION (responsive)
+=========================== */
+.aboutus-section {
+  text-align: center;
+  padding: 40px 0 60px 0;
+  background: linear-gradient(180deg, #f8f7fa 60%, #fbeee6 100%);
+}
+
+.aboutus-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.aboutus-desc {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 38px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutus-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 70px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutus-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.aboutus-icon img {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(252, 128, 25, 0.08);
+  border: 2px solid #fbeee6;
+  margin-bottom: 6px;
+}
+
+.aboutus-icon span {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+.aboutus-logo img {
+  width: 80px;
+  margin-top: 10px;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .aboutus-icons {
+    gap: 32px;
+  }
+  .aboutus-section {
+    padding: 28px 0 32px 0;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .aboutus-title {
+    font-size: 1.9rem;
+  }
+  .aboutus-desc {
+    font-size: 1rem;
+    padding: 0 12px;
+  }
+  .aboutus-icon img {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+
+/* ===========================
+    NEXT VIDEO SECTION
+=========================== */
+.next-video-section {
+  margin: 60px auto 0 auto;
+  max-width: 1020px;
+  text-align: center;
+}
+
+.next-video-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #444;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+.next-video-wrapper {
+  background: #000;
+  border-radius: 60px;
+  overflow: hidden;
+  width: 80vw;
+  max-width: 1020px;
+  height: 520px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 60px;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .next-video-wrapper {
+    height: 360px;
+    border-radius: 38px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .next-video-title {
+    font-size: 1.6rem;
+  }
+  .next-video-wrapper {
+    height: 220px;
+    border-radius: 22px;
+  }
+}
+
+
+/* ===========================
+    GET TO KNOW SECTION
+=========================== */
+.get-to-know-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.get-to-know-title {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #444;
+  margin-bottom: 38px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.get-to-know-line {
+  width: 60px;
+  height: 3px;
+  background: #fc8019;
+  border-radius: 2px;
+}
+
+.get-to-know-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 38px;
+}
+
+.get-to-know-tabs {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.get-to-know-tab {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding-left: 6px;
+}
+
+.get-to-know-tab.active {
+  color: #fc8019;
+}
+
+.get-to-know-tabs .get-to-know-tab:not(:last-child) {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 28px;
+}
+
+.get-to-know-details {
+  flex: 1;
+}
+
+.get-to-know-detail {
+  display: none;
+  font-size: 1.35rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.get-to-know-detail.active {
+  display: block;
+}
+
+.get-to-know-image {
+  flex: 0 0 370px;
+}
+
+.get-to-know-image img {
+  width: 100%;
+  max-width: 370px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 48px;
+  box-shadow: 0 4px 24px rgba(252, 128, 25, 0.07);
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .get-to-know-content {
+    flex-direction: column;
+  }
+  .get-to-know-tabs {
+    flex-direction: row;
+    gap: 18px;
+    overflow-x: auto;
+  }
+  .get-to-know-tab {
+    font-size: 1.2rem;
+    border-bottom: none;
+  }
+  .get-to-know-image img {
+    height: 240px;
+    border-radius: 32px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .get-to-know-title {
+    font-size: 1.8rem;
+  }
+  .get-to-know-image img {
+    height: 200px;
+  }
+}
+
+
+/* ===========================
+    INDUSTRY PIONEER SECTION
+=========================== */
+.industry-pioneer-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.industry-pioneer-title {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #444;
+  margin-bottom: 38px;
+}
+
+.industry-pioneer-content {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.industry-pioneer-text {
+  flex: 1.2;
+  font-size: 1.35rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.industry-pioneer-image {
+  flex: 1;
+  background: #fff;
+  border-radius: 48px;
+  box-shadow: 0 4px 24px rgba(252, 128, 25, 0.07);
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  min-width: 340px;
+  height: 340px;
+}
+
+.industry-pioneer-image img {
+  width: 100%;
+  max-width: 320px;
+  object-fit: contain;
+}
+
+/* Stats Section */
+.industry-pioneer-stats {
+  margin-top: 38px;
+  padding-top: 32px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+}
+
+.industry-pioneer-stat {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #eaeaea;
+}
+
+.industry-pioneer-stat:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 1.15rem;
+  color: #444;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .industry-pioneer-content {
+    flex-direction: column;
+  }
+  .industry-pioneer-image {
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+    padding: 18px;
+  }
+  .industry-pioneer-image img {
+    max-width: 220px;
+  }
+  .industry-pioneer-stats {
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 0;
+    border-top: none;
+  }
+  .industry-pioneer-stat {
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    padding: 18px 0;
+  }
+  .industry-pioneer-stat:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .industry-pioneer-title {
+    font-size: 1.8rem;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .stat-label {
+    font-size: 0.95rem;
+  }
+}
+
+
+

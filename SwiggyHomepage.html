@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Swiggy Clone</title>
+    <!-- FontAwesome & CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- Add this below your search input in SwiggyHomepage.html -->
+  <ul
+    id="searchSuggestions"
+    style="
+      position: absolute;
+      z-index: 99;
+      background: #fff;
+      border: 1px solid #eee;
+      width: 220px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+    "
+  ></ul>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-image"></div>
+        <span class="logo-text">Swiggy</span>
+      </div>
+
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <nav id="navMenu">
+        <a href="SwiggyHomepage.html">Home</a>
+        <a href="aboutSwiggy.html" id="corporate">About Swiggy</a>
+        <a href="Offerlist.html" id="Offers">Offers</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html" id="cartLink">
+          Cart <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCount">0</span>
+        </a>
+        <a href="signup.html">Signup</a>
+        <button id="darkModeBtn">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <h1>Order food from your favourite restaurants</h1>
+      <div class="search">
+        <input id="searchInput" placeholder="Search restaurants or dishes..." />
+        <button id="searchBtn">Search</button>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="categories" id="categories">
+      <button class="active">All</button>
+      <button>Indian</button>
+      <button>Chinese</button>
+      <button>Italian</button>
+      <button>Fast Food</button>
+      <button>Desserts</button>
+      <button>Coffees</button>
+      <button>Cafe</button>
+    </section>
+
+    <!-- Add this above your restaurant list
+<button id="sortRating" style="padding:10px;margin-bottom:20px;">Sort by Rating</button> -->
+
+    <!-- ===== RESTAURANTS ===== -->
+    <section class="restaurant-container" id="restaurantContainer"></section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-top">
+        <p>
+          For better experience, <strong>download the Swiggy app now</strong>
+        </p>
+        <div class="app-links">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play"
+          />
+          <img
+            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+            alt="App Store"
+          />
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/050/816/833/small_2x/swiggy-transparent-icon-free-png.png"
+            alt="Swiggy Logo"
+          />
+          <h2>Swiggy</h2>
+          <p>© 2025 Swiggy Limited</p>
+        </div>
+
+        <div class="footer-links">
+          <div>
+            <h3>Company</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Swiggy Corporate</li>
+              <li>Careers</li>
+              <li>Team</li>
+              <li>Swiggy One</li>
+              <li>Swiggy Instamart</li>
+              <li>Swiggy Dineout</li>
+              <li>Swiggy Genie</li>
+              <li>Minis</li>
+              <li>Pyng</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Contact us</h3>
+            <ul>
+              <li>Help & Support</li>
+              <li>Partner with us</li>
+              <li>Ride with us</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Available in:</h3>
+            <ul>
+              <li>Bangalore</li>
+              <li>Gurgaon</li>
+              <li>Hyderabad</li>
+              <li>Delhi</li>
+              <li>Mumbai</li>
+              <li>Pune</li>
+              <li><button class="city-btn">679 cities</button></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Life at Swiggy</h3>
+            <ul>
+              <li>Explore with Swiggy</li>
+              <li>Swiggy News</li>
+              <li>Snackables</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Legal</h3>
+            <ul>
+              <li>Terms & Conditions</li>
+              <li>Cookie Policy</li>
+              <li>Privacy Policy</li>
+              <li>Investors Relations</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Social Links</h3>
+            <div class="social-icons">
+              <a
+                href="https://www.linkedin.com/company/swiggy-in/?originalSubdomain=in"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/swiggyindia/?hl=en"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/swiggy.in/"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://www.youtube.com/channel/UCue3MUx8W_ezngF6uEIuDMA"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://x.com/Swiggy?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <footer>© 2025 Swiggy Clone — Demo Only</footer>
+
+    <div id="toast"></div>
+
+    <!-- ===== SCRIPT ===== -->
+    <button
+      id="backToTop"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 12px 18px;
+        background: #fc8019;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        z-index: 999;
+      "
+    >
+      ↑ Top
+    </button>
+
+    <script type="module" src="script.js"></script>
+    <!-- Add before closing </body> tag -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Close nav when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

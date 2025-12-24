@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aboutSwiggy.css"/>
+    <title>Document</title>
+</head>
+<body>
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Attach dropdown events AFTER navbar loads
+      const investorBtn = document.getElementById("investor-btn");
+      const menu = document.getElementById("investor-menu");
+
+      investorBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!investorBtn.contains(e.target)) {
+          menu.style.display = "none";
+        }
+      });
+
+      const investorBtn1 = document.getElementById("sustainabilityBtn");
+      const menu1 = document.getElementById("dropdownMenu");
+
+      investorBtn1.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu1.style.display = menu1.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!investorBtn1.contains(e.target)) {
+          menu.style.display = "none";
+        }
+      });
+
+    });
+</script>
+
+
+<section class="aboutus-section">
+  <h1 class="aboutus-title">ABOUT US</h1>
+  <p class="aboutus-desc">
+    Swiggy is a new-age consumer-first organization offering an easy-to-use convenience platform, accessible through a unified app.
+  </p>
+  <div class="aboutus-icons">
+    <div class="aboutus-icon">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/flavour.webp" alt="Food" />
+      <span>Food</span>
+    </div>
+    <div class="aboutus-icon">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2025/10/instamart-new-logo.png" alt="Instamart" />
+      <span>Instamart</span>
+    </div>
+    <div class="aboutus-icon">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/dineout-1.webp" alt="Dineout" />
+      <span>Dineout</span>
+    </div>
+     <div class="aboutus-icon">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/Mission.png" alt="Scenes" />
+      <span>Scenes</span>
+    </div>
+  </div>
+  <div class="aboutus-logo">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/050/816/833/small_2x/swiggy-transparent-icon-free-png.png" alt="Swiggy Logo" />
+  </div>
+</section>
+<section class="get-to-know-section">
+  <h1 class="get-to-know-title">
+    <span class="get-to-know-line"></span>
+    GET TO KNOW US
+    <span class="get-to-know-line"></span>
+  </h1>
+  <div class="get-to-know-content">
+    <div class="get-to-know-tabs">
+      <div class="get-to-know-tab active">Mission <span style="font-size:1.2em;">&#8594;</span></div>
+      <div class="get-to-know-tab">Vision</div>
+      <div class="get-to-know-tab">Values</div>
+    </div>
+    <div class="get-to-know-details">
+      <div class="get-to-know-detail active">
+        <p>
+          Our mission is to elevate the quality of life of the urban consumer by offering unparalleled convenience.<br>
+          Convenience is what makes us tick. It’s what makes us get out of bed and say, “Let’s do this.”
+        </p>
+      </div>
+      <div class="get-to-know-detail">
+        <p>
+          Our vision is to be the most trusted and innovative convenience platform, transforming the way India eats, shops, and experiences local services.
+        </p>
+      </div>
+      <div class="get-to-know-detail">
+        <p>
+          <strong>Customer First:</strong> We obsess over delivering delight.<br>
+          <strong>Innovation:</strong> We challenge the status quo.<br>
+          <strong>Integrity:</strong> We act with honesty and transparency.<br>
+          <strong>Collaboration:</strong> We win together.
+        </p>
+      </div>
+    </div>
+    <div class="get-to-know-image">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/Mission.png" alt="Swiggy Delivery" />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+ 
+<!-- Example HTML to use after your IPO section -->
+<section class="next-video-section">
+  <div class="next-video-title">--IPO DELIVERED- NOVEMBER 2024--</div>
+  <div class="next-video-wrapper">
+    <!-- Replace src with your video file -->
+    <video src="swiggy.jpeg.mp4"  controls></video>
+  </div>
+</section>
+
+
+
+
+<section class="industry-pioneer-section">
+  <h1 class="industry-pioneer-title">
+    <span class="industry-pioneer-line"></span>
+    INDUSTRY PIONEER
+    <span class="industry-pioneer-line"></span>
+  </h1>
+  <div class="industry-pioneer-content">
+    <div class="industry-pioneer-text">
+      Being among the first few entrants, Swiggy has successfully pioneered the hyperlocal commerce industry in India, launching Food Delivery in 2014 and Quick Commerce in 2020. Due to the pioneering status of Swiggy, it is well-recognised as a leader in innovation in hyperlocal commerce and a category-defining brand; trusted, intuitive and deeply embedded in the daily routines of millions of Indians.
+    </div>
+    <div class="industry-pioneer-image">
+      <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/11/Group-1116602947-768x507.webp" alt="Swiggy Delivery Partner" />
+    </div>
+  </div>
+  <div class="industry-pioneer-stats">
+    <div class="industry-pioneer-stat">
+      <span class="stat-number">3 Billion+</span>
+      <span class="stat-label">orders delivered</span>
+    </div>
+    <div class="industry-pioneer-stat">
+      <span class="stat-number">238k+</span>
+      <span class="stat-label">restaurant partners</span>
+    </div>
+    <div class="industry-pioneer-stat">
+      <span class="stat-number">520k+</span>
+      <span class="stat-label">delivery partners</span>
+    </div>
+    <div class="industry-pioneer-stat">
+      <span class="stat-number">718+</span>
+      <span class="stat-label">cities in India</span>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

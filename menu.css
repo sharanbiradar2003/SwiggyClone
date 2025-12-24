@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+.hero {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.hero .info {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.menu {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 0.2fr));
+}
+.menu-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.menu-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.menu-item .details {
+  padding: 10px;
+}
+.menu-item h3 {
+  margin: 6px 0;
+}
+.menu-item p {
+  margin: 0;
+  color: #666;
+}
+.menu-item button {
+  background: #fc8019;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 8px;
+  width: 100%;
+}
+
+#toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fc8019;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  display: none;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header a.back {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.cart-btn {
+  position: relative;
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.cart-btn span {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #fc8019;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}

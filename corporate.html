@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Add this where you want the Press / Newsroom carousel to appear -->
+<link rel="stylesheet" href="corporate.css" />
+<section class="press-carousel" aria-label="Press releases carousel">
+  <button class="pc-arrow pc-prev" aria-label="Previous slide">‹</button>
+
+  <div class="pc-track" id="pcTrack">
+    <!-- Slide 1 -->
+    <div class="pc-slide" data-index="0">
+      <a class="press-card" href="newsroom.html" data-target="newsroom.html">
+        <div class="press-left">
+          <h3>Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+          <p>
+            Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’. High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants...
+          </p>
+          <span class="press-cta">Read more</span>
+        </div>
+        <div class="press-right" aria-hidden="true">
+          <img src="https://i.ibb.co/6rQ1qvR/swiggy-press.png" alt="Swiggy Press Release" />
+        </div>
+      </a>
+    </div>
+
+    <!-- (Optional) Duplicate this block for more slides -->
+    <div class="pc-slide" data-index="1">
+      <a class="press-card" href="newsroom.html" data-target="newsroom.html">
+        <div class="press-left">
+          <h3>Another press headline goes here</h3>
+          <p>Short summary of the press release. Click to open newsroom for full article.</p>
+          <span class="press-cta">Read more</span>
+        </div>
+        <div class="press-right" aria-hidden="true">
+          <img src="https://i.ibb.co/6rQ1qvR/swiggy-press.png" alt="Press image" />
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <button class="pc-arrow pc-next" aria-label="Next slide">›</button>
+
+  <div class="pc-dots" id="pcDots" role="tablist" aria-label="Slide dots">
+    <!-- JS will populate dots -->
+  </div>
+</section>
+
+<script src="corporate.js"></script>
+</body>
+</html>

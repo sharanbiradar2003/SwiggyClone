@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8f8f8, #fde9e3);
+  color: #222;
+}
+
+/* Layout */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 100px;
+  gap: 60px;
+}
+
+/* Left Side */
+.contact-left {
+  flex: 1;
+}
+
+.contact-left h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.email {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.email a {
+  color: #111;
+  text-decoration: none;
+}
+
+.email a:hover {
+  color: #ff6600;
+}
+
+/* Social Icons */
+.contact-left h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.social-icons a {
+  color: #ff6600;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e65200;
+}
+
+/* Address */
+.address {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.directions-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.directions-btn:hover {
+  background: #e85b00;
+}
+
+/* Right Side */
+.contact-right {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-right h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #111;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 120px;
+}
+
+.submit-btn:hover {
+  background: #e65200;
+}
+
+/* Terms Text */
+.terms {
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.terms a {
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 40px 30px;
+  }
+
+  .contact-right {
+    width: 100%;
+  }
+}

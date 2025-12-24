@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Press Carousel</title>
+    <link rel="stylesheet" href="Newsroom.css" />
+    <link rel="stylesheet" href="Mediakit.css"/>
+
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+    <script>
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("navbar").innerHTML = data));
+    </script>
+
+    <!-- Press Carousel -->
+    <section class="press-carousel" aria-label="Press releases carousel">
+      <button class="pc-arrow pc-prev" aria-label="Previous slide">‹</button>
+
+      <div class="pc-track" id="pcTrack">
+        <!-- Slides added by JavaScript -->
+      </div>
+
+      <button class="pc-arrow pc-next" aria-label="Next slide">›</button>
+
+      <div class="pc-dots" id="pcDots" role="tablist" aria-label="Slide dots"></div>
+    </section>
+
+
+<section class="newsroom-list-section" id="newsroomListSection">
+  <div class="newsroom-controls">
+    <div class="newsroom-filters">
+      <button class="filter-btn active" data-filter="all">Press Release</button>
+      <button class="filter-btn" data-filter="media">Media Kit</button>
+    </div>
+
+    <div class="newsroom-search-wrap">
+      <input id="newsSearch" class="newsroom-search" type="search" placeholder="Search" aria-label="Search newsroom" />
+    </div>
+  </div>
+
+  <div class="newsroom-grid" id="newsroomGrid">
+    <!-- Card 1 -->
+    <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Introduces ‘No Added Sugar’ Category to Make Healthier Choices Effortless this festive season</h3>
+        <p class="news-excerpt">Swiggy launches a new category making it easy for customers to choose low-sugar options across thousands of restaurant partners.</p>
+        <a class="news-readmore" href="newsroom-article-2.html">Read more</a>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 1, 2025</time>
+        <h3 class="news-title">Swiggy rolls out new features for Food on Train this festive season</h3>
+        <p class="news-excerpt">New features aim to make ordering on long train journeys easier, with tracked delivery and better meal options for passengers.</p>
+        <a class="news-readmore" href="newsroom-article-3.html">Read more</a>
+      </div>
+    </article>
+    
+
+  <!-- <-- card4-->
+ <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+
+    <!-- card5 -->
+    <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+
+<!-- card6 -->
+    <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+    
+    <!-- card7 -->
+<article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+
+    <!-- card8 -->
+     <article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+    <!-- card9 -->
+<article class="news-card" data-type="all">
+      <div class="news-card-hero">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/09/News-Detail-1024x196.png" alt="Swiggy Press" />
+      </div>
+      <div class="news-card-body">
+        <time class="news-date">October 21, 2025</time>
+        <h3 class="news-title">Swiggy Expands High Protein Category to 160+ cities; Launches New Subcategories and ‘Protein Minis’</h3>
+        <p class="news-excerpt">High Protein category is live with over 1 million high protein dishes across 1.4 lakh restaurants. Launches No Fry, Low Cal and Gluten Free categories and Protein Minis for health conscious users.</p>
+        <a class="news-readmore" href="newsroom-article-1.html">Read more</a>
+      </div>
+    </article>
+
+
+
+    <!-- Add more cards here (copy a <article> block) -->
+  </div>
+</section>
+<!-- ...existing code... -->
+<!-- REPLACE your existing media kit section with the updated version below -->
+<section id="mediaKitSection" class="media-kit-section" aria-hidden="true" hidden>
+  <div class="media-kit-inner">
+    <article class="media-card media-card-profile">
+      <h2 class="media-card-title">Company Profile</h2>
+      <div class="media-card-body">
+        <p>
+          Swiggy is India’s pioneering on-demand convenience platform, catering to millions of consumers each month. Founded in 2014, its mission is to elevate the quality of life for the urban consumer by offering unparalleled convenience. With an extensive footprint in food delivery, Swiggy Food collaborates with nearly 2 lakh restaurants across 600+ cities. Swiggy Instamart, its quick commerce platform operating in 43 cities, delivers groceries and other essentials across 20+ categories in 10 minutes. Fueled by a commitment to innovation, Swiggy continually incubates and integrates new services like Swiggy Dineout and Swiggy Genie into its multi-service app. Leveraging cutting-edge technology and Swiggy One, the country’s only membership program offering benefits across food, quick commerce, dining out, and pick-up and drop services, Swiggy aims to provide a superior experience to its consumers. For more information, visit <a href="https://www.swiggy.com" target="_blank" rel="noopener">www.swiggy.com</a>.
+        </p>
+      </div>
+    </article>
+
+    <aside class="media-card media-card-pr">
+      <h2 class="media-card-title">Public Relations and Media</h2>
+      <div class="media-card-body pr-list">
+        <div class="pr-item">
+          <div class="pr-name">Sanjana Shetty (Swiggy Instamart)</div>
+          <a class="pr-email" href="mailto:sanjana.shetty1@swiggy.in">sanjana.shetty1@swiggy.in</a>
+        </div>
+        <div class="pr-item">
+          <div class="pr-name">Akanksha Jain (Swiggy Food and Swiggy Dineout)</div>
+          <a class="pr-email" href="mailto:akanksha.j@swiggy.in">akanksha.j@swiggy.in</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+<!-- ...existing code... -->
+
+
+
+
+<!-- Link scripts at the end of the file (or in your common JS) -->
+<script src="Newsroom.js"></script>
+
+
+<script src="Mediakit.js"></script>
+    <script src="Newsroom.js"></script>
+  </body>
+</html>

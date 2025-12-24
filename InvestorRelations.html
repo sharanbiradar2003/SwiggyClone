@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Investor Relations dropdown</title>
+  
+  <style>
+    /* minimal styling */
+    .nav { font-family: Arial, sans-serif; }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown button {
+      background: white;
+      border: 0;
+      padding: 10px 14px;
+      font-size: 16px;
+      cursor: pointer;
+      display:flex; gap:8px; align-items:center;
+    }
+    .caret { width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:7px solid #ff6a00; margin-left:4px; }
+
+    .menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      padding: 8px 0;
+      margin-top:8px;
+      z-index: 100;
+    }
+    .menu[hidden] { display: none; }
+    .menu a {
+      display: block;
+      padding: 10px 16px;
+      color: #333;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .menu a:hover, .menu a:focus { background:#f4f4f4; outline:none; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="dropdown" id="investor-dropdown">
+      <button id="investor-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="investor-menu"
+              >
+        Investor Relations <span class="caret" aria-hidden="true"></span>
+      </button>
+
+      <ul id="investor-menu" class="menu" role="menu" aria-labelledby="investor-btn" hidden>
+        <li role="none"><a role="menuitem" href="#financial-results">Financial Results</a></li>
+        <li role="none"><a role="menuitem" href="#reports">Reports and Publications</a></li>
+        <li role="none"><a role="menuitem" href="#governance">Corporate Governance</a></li>
+        <li role="none"><a role="menuitem" href="#analyst">Analyst Coverage</a></li>
+        <li role="none"><a role="menuitem" href="#disclosures">Disclosures under SEBI LODR</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script src="InvestorRelations.js"></script>
+
+</body>
+</html>

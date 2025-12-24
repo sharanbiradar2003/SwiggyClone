@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Support | Swiggy</title>
+  <link rel="stylesheet" href="contactus.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+  <section class="contact-section">
+    <div class="contact-left">
+      <h1>Customer Support</h1>
+      <p class="email">Email: <a href="mailto:support@swiggy.in">support@swiggy.in</a></p>
+
+      <h3>Find us on</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+
+      <h3>Corporate Office</h3>
+      <p class="address">
+        No. 55, Sy No. 8-14, Ground Floor, I&J Block, Embassy TechVillage,<br>
+        Outer Ring Road, Devarabisanahalli, Bengaluru 560 103, Karnataka, India.<br>
+        Corporate Identity Number: L74110KA2013PLC096530<br>
+        Registration Number: 096530
+      </p>
+
+      <button class="directions-btn">Get Directions</button>
+    </div>
+
+    <div class="contact-right">
+      <h2>Get in touch</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Enter Name" required>
+        <input type="email" placeholder="Enter Email Address" required>
+        <textarea rows="4" placeholder="Enter Message" required></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+        <p class="terms">
+          By contacting us you agree to the <a href="#">Terms and Conditions</a> and 
+          <a href="#">Privacy Policy</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

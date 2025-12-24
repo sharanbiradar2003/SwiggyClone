@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivering for Everyone | Swiggy Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f6f7fb);
+      color: #1c1c1c;
+    }
+
+    .deliver-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .deliver-section h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .deliver-section p {
+      font-size: 1.1rem;
+      color: #6b6b6b;
+      margin-bottom: 50px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 25px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      width: 220px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1c1c1c;
+      margin-top: auto;
+    }
+
+    /* Confetti background */
+    .card::before {
+      content: "";
+      /* background: url("https://i.ibb.co/7SrHdzr/confetti.png") repeat; */
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .card * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        width: 100%;
+      }
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1s cubic-bezier(.2,.8,.2,1), filter 0.45s;
+      transform-origin: center center; /* zoom from center */
+      will-change: transform;
+    }
+    img:hover {
+      transform: scale(1.3);   /* how much it grows */
+      filter: saturate(1.05);   /* subtle boost */
+    }
+  </style>
+</head>
+<body>
+    <div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+  <section class="deliver-section">
+    <h1>DELIVERING FOR EVERYONE</h1>
+    <p>Multiple benefits across the ecosystem for consumers, partners and riders</p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/swiggy-768x765.webp" alt="Swiggy One" />
+        <h3>Swiggy One</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/Hdfc.webp" alt="HDFC Credit Card" /> 
+        <h3>HDFC Credit Card</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/Group-1000006480.webp" alt="Ride with Swiggy" />
+        <h3>Ride With Swiggy</h3>
+      </div>
+
+      <div class="card">
+         <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/home-2.webp" alt="Partner Programme" /> 
+        <h3>Partner Programme</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/flavour.webp"/>
+        <h3>Flavour Meets Fame</h3>
+           
+      </div>
+    </div>
+  </section>
+</body>
+</html>
