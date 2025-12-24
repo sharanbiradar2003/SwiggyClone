@@ -80,7 +80,7 @@ document.querySelector(".place-order-btn").addEventListener("click", function ()
   localStorage.removeItem("swiggyCart");
   localStorage.removeItem("swiggyCurrentOrder");
 
-  window.location.href = "SwiggyHomepage.html";
+  window.location.href = "index.html";
 });
 
 
